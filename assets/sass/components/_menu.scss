@@ -1,0 +1,72 @@
+.hamburger {
+    background-color: $menuBgColor;
+}
+
+.menuOpen {
+    .menu {
+        transform: translateX(0);
+
+    }
+}
+
+
+.menu {
+    background-color: $menuBgColor;
+    position: fixed;
+    width: 290px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid $menuBorderColor;
+    z-index: 4;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @media (max-width: $showResposiveNavaigation) {
+        transform: translateX(-290px);
+    }
+
+    .logo {
+        margin: 0 0 130px 0;
+    }
+
+    .navList {
+        @include resetList;
+        margin: 0 0 40px 0;
+
+
+
+        li {
+            margin: 0 0 20px 0;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            a {
+                color: $navFontColor;
+                font-weight: 700;
+
+                i {
+                    color: $iconColor;
+                    margin: 0 24px 0 0;
+
+                }
+
+                &:hover {
+                    color: $navFOntHoverColor;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        margin-top: auto;
+        margin-bottom: 0;
+        font-size: 14px;
+        color: $navCopyrightColor;
+    }
+}
